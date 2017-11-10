@@ -16,9 +16,7 @@ if (command === 'add') {
     if (_.isUndefined(note)) {
         console.log("Note not added. Title already in use.");
     } else {
-        console.log(`Note ${note.title} added.`);
-        console.log("-------------------------");
-        console.log(`Body: ${note.body}`);
+        notes.logNote(note);
     }
 } else if (command === 'list') {
     notes.getAll();
@@ -27,9 +25,7 @@ if (command === 'add') {
     if(_.isUndefined(note)) {
         console.log('Note not found.');
     } else {
-        console.log(`Note ${note.title} found.`);
-        console.log("-------------------------");
-        console.log(`Body: ${note.body}`);
+        notes.logNote(note);
     }
 } else if (command === 'remove') {
     var noteRemoved = notes.removeNote(argv.title);
